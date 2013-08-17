@@ -1,11 +1,112 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<style>
-		
+			body {
+				margin: 0;
+			}
+
+			#sideMenu {
+				background: #212121;
+				float: left;
+				width: 20%;
+				height: 100%;
+				color: #F2F2F2;
+				text-align: center;
+			}
+
+			#sideMenuTitle {
+				font-size: 32px;
+				margin-top: 50%;
+				font-style: italic;
+				padding-bottom: 20%;
+			}
+
+			#sideMenuOptionPrograming {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+			}
+			#sideMenuSelectorPrograming {
+				text-align: left;
+				margin: auto;
+				background: #FF0000;
+				z-index: 2;
+				width: 110px;
+				margin-top: -21px;
+				border-radius: 2px;
+			}
+			#sideMenuOptionAnimation {
+				margin: auto;
+				font-size: 20px;
+				width: 110px;
+				z-index: 1;
+			}
+			#sideMenuSelectorAnimation {
+				text-align: left;
+				margin: auto;
+				background: #0094CF;
+				z-index: 2;
+				width: 110px;
+				margin-top: -21px;
+				border-radius: 2px;
+			}
 		</style>
 	</head>
 	<body>
-		Sup bitches
+		<div id="sideMenu">
+			<div id="sideMenuTitle">
+				<strong> Noah Huppert </strong>
+			</div>
+			<div id="sideMenuOptionPrograming">
+				Programing
+			</div>
+			<div id="sideMenuSelectorPrograming">
+				&nbsp;
+			</div>
+			<div id="sideMenuOptionAnimation">
+				Animation
+			</div>
+			<div id="sideMenuSelectorAnimation">
+				&nbsp;
+			</div>
+		</div>
+		<script>
+			//Initail Hiding and other functions\\
+			$("#sideMenuSelectorPrograming").hide();
+			$("#sideMenuSelectorAnimation").hide();
+			//******************************\\
+
+
+			//Side Menu\\
+			$('#sideMenu').css({
+				'height' : $(window).height()
+			});
+			//******************************\\
+
+
+			//Programing Option in side menu\\
+			$('#sideMenuOptionPrograming').mouseenter(function() {
+				$("#sideMenuSelectorPrograming").show();
+			});
+
+			$('#sideMenuOptionPrograming').mouseleave(function() {
+				$("#sideMenuSelectorPrograming").hide();
+			});
+			//******************************\\
+
+
+			//Programing Option in side menu\\
+			$('#sideMenuOptionAnimation').mouseenter(function() {
+				$("#sideMenuSelectorAnimation").show();
+			});
+
+			$('#sideMenuOptionAnimation').mouseleave(function() {
+				$("#sideMenuSelectorAnimation").hide();
+			});
+			//******************************\\
+		</script>
 	</body>
 </html>
