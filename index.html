@@ -71,8 +71,8 @@
 			}
 			.projectsListing {
 				z-index: 2;
-				width: 100%;
-				height: 100%;
+				width: 1280px;
+				height: 775px;
 			}
 			.catagory {
 				padding-top: 20px;
@@ -153,7 +153,7 @@
 			}
 			.navBar {
 				z-index: 2;
-				position: fixed;
+				position: absolute;
 				text-align: center;
 				width: 100px;
 				height: 70%;
@@ -174,12 +174,6 @@
 				padding-bottom: 5px;
 				padding-top: 5px;
 				color: #9E9E9E;
-			}
-			.navBarItem:hover{
-				background: #FAFAFA;
-			}
-			.navBarHeader:hover{
-				background: #FAFAFA;
 			}
 			.navBarHeader {
 				height: 60px;
@@ -212,7 +206,7 @@
 			<div class="sideMenuTitle">
 				<strong> Noah Huppert </strong>
 				<div class="tagLine">
-					~A student, developer, and 3d artist.
+					~A student, developer, and 3D artist.
 				</div>
 			</div>
 			<div class="sideMenuOption" id="programing">
@@ -313,6 +307,7 @@
 
 				//******************************\\
 
+
 				//Home Option in secondary side menu\\
 				$('.navBarHeader#home').click(function() {
 					$('.contentArea').html('<div class="imageCarosel"><img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/><img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/></div>');
@@ -363,16 +358,46 @@
 
 
 				//Side Menu\\
+				var sideMenuWidth = $(window).width() * 0.2;
+				if(sideMenuWidth < 300){
+					sideMenuWidth = 300;
+				}
+				
 				$('.sideMenu').css({
-					'height' : $(window).height()
+					'height' : $(window).height(),
+					'width' : sideMenuWidth
 				});
 				//******************************\\
 
+
+				//Image Carosel\\
+				var imageCaroselWidth = $(window).width() - sideMenuWidth;
+				if(imageCaroselWidth < 1000){
+					imageCaroselWidth = 1000;
+				}
+				$('.imageCarosel').css({
+					'width' : imageCaroselWidth
+				});
+				//******************************\\
+				
+				
 				//Content Area\\
 				$('.contentArea').css({
 					'height' : $(window).height()
 				});
 				//******************************\\
+
+
+				//Secondary Menu\\
+				var secondaryMenuMarginLeft = (($(window).width() - $('.contentArea').width()) - $('.navBar').width()) - 30;
+				if(secondaryMenuMarginLeft < $(window).width()){
+					secondaryMenuMarginLeft = 70;
+				}
+				$('.navBar').css({
+					'margin-left' : secondaryMenuMarginLeft
+				});
+				//******************************\\
+				
 
 				//Programing Option in side menu\\
 				$('.sideMenuOption#programing').mouseenter(function() {
