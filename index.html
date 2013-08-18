@@ -57,11 +57,15 @@
 				z-index: 1;
 				margin-top: 20px;
 			}
-
+			.tagLine {
+				font-style: italic;
+				font-size: 16px;
+				margin-left: 20px;
+			}
 			.contentArea {
 				margin-left: 20%;
 				width: 80%;
-				background: #FFFFFF;
+				background: url();
 				color: #363636;
 				text-align: center;
 			}
@@ -94,7 +98,7 @@
 				border-width: 2px;
 				border-color: #000000;
 				border-radius: 15px;
-				background: #333333;
+				background: #FFFFFF;
 				margin-top: 20px;
 				margin-left: 32px;
 				float: left;
@@ -102,25 +106,98 @@
 			.listingTitle {
 				margin-left: auto;
 				margin-right: auto;
-				margin-top: -35px;
-				background: #403F3F;
+				margin-top: 30px;
+				background: #FFFFFF;
 				width: 75px;
-				border-radius: 5px;
-				border-style: solid;
+				border-style: none;<!
+				--border-radius: 5px;
 				border-width: 1px;
-				border-color: #242424;
+				border-color: #242424;-->
 				z-index: 2;
-				font-size: 11px;
+				font-size: 16px;
+				font-style: italic;
 			}
-			.listingThumbnail {
-				width: 97px;
-				height: 97px;
-				border-radius: 15px;
+			.post {
+				width: 60%;
+				margin: auto;
+				padding-top: 100px;
+			}
+			.postTitle {
+				font-size: 34px;
+				font-style: italic;
+				padding-bottom: 20px;
+			}
+			.postContent {
+				background: #FAFAFA;
 				border-style: solid;
-				border-width: 1px;
-				border-color: #242424;
-				margin-left: 1px;
-				margin-top: 1px;
+				border-width: 2px;
+				border-color: #F2F2F2;
+				border-radius: 3px;
+				text-align: left;
+				padding-left: 25px;
+				padding-right: 25px;
+				padding-top: 25px;
+				padding-bottom: 25px;
+				color: #808080;
+			}
+			.postMetaData {
+				background: #FCFCFC;
+				width: 170px;
+				box-shadow: 0px 0px 5px #E3E3E3 inset;
+				border-radius: 2px;
+				font-size: 14px;
+				color: #CCCCCC;
+				text-align: center;
+				float: left;
+				margin-right: 25px;
+			}
+			.navBar {
+				z-index: 2;
+				position: fixed;
+				text-align: center;
+				width: 100px;
+				height: 70%;
+				border-right-style: solid;
+				border-right-width: 2px;
+				border-right-color: #D1D1D1;
+				margin-top: 120px;
+				margin-left: 190px;
+			}
+			.navBarItem {
+				height: 40px;
+				line-height: 40px;
+				width: 90px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #E3E3E3;
+				font-size: 18px;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				color: #9E9E9E;
+			}
+			.navBarHeader {
+				height: 60px;
+				line-height: 60px;
+				width: 90px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #E3E3E3;
+				font-size: 24px;
+				color: #666666;
+				font-style: italic;
+			}
+			.homeImage {
+				margin: auto;
+				margin-top: 10%;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #8F8F8F;
+				border-radius: 10px;
+			}
+			.imageCarosel {
+				background: #1C1C1C;
+				width: 100%;
+				height: 100%;
 			}
 		</style>
 	</head>
@@ -128,6 +205,9 @@
 		<div class="sideMenu">
 			<div class="sideMenuTitle">
 				<strong> Noah Huppert </strong>
+				<div class="tagLine">
+					~A student, developer, and 3d artist.
+				</div>
 			</div>
 			<div class="sideMenuOption" id="programing">
 				Programing
@@ -154,15 +234,51 @@
 				&nbsp;
 			</div>
 		</div>
-		<div class="contentArea">
-			<div class="post">
-				<div class="postTitle">
-					Pig Latin Translator
-				</div>
-				<div class="postContent">
-					
-				</div>
+		<div class="navBar">
+			<div class="navBarHeader" id="home">
+				<strong>Home</strong>
 			</div>
+			<div class="navBarItem" id="programing">
+				Programing
+			</div>
+			<div class="navBarItem" id="animation">
+				Animation
+			</div>
+			<div class="navBarItem" id="robotics">
+				Robotics
+			</div>
+			<div class="navBarItem" id="other">
+				Other
+			</div>
+		</div>
+
+		<div class="contentArea">
+			<div class="imageCarosel">
+				<img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/>
+				<img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/>
+			</div>
+
+			<!--<div class="post">
+			<div class="postTitle">
+			<strong>Project Title</strong>
+			</div>
+			<div class="postContent">
+			<div class="postMetaData">
+			Catagory: catagory
+			<br>
+			Date Completed: M/D/Y
+			<br>
+			Developers: developers
+			<br>
+			Download
+			</div>
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here. Some things about the article and such should be writen here.
+			Some things about the article and such should be writen here.Some things about the article and such should be writen here.
+			</div>
+			</div>-->
 			<!--<div class="projectsListing">
 			<div class="catagory">
 			Programing
@@ -180,7 +296,65 @@
 				$(".sideMenuSelector#animation").hide();
 				$(".sideMenuSelector#robotics").hide();
 				$(".sideMenuSelector#other").hide();
+				$('.navBar').css({
+					'opacity' : '0'
+				});
+				$('.homeImage#homeImage2').hide();
+				window.setInterval(function() {
+					$('.homeImage#homeImage1').toggle();
+					$('.homeImage#homeImage2').toggle();
+				}, 5000);
+
 				//******************************\\
+
+				//Home Option in secondary side menu\\
+				$('.navBarHeader#home').click(function() {
+					$('.contentArea').html('<div class="imageCarosel"><img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/><img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/></div>');
+					$(".navBar").animate({
+						opacity : 0,
+					}, 1200);
+					$('.homeImage#homeImage2').hide();
+					$('.contentArea').css({
+						'margin-left' : '20%'
+					});
+					$(".sideMenu").animate({
+						width : $(window).width() - $('.contentArea').width(),
+						opacity : 1
+					}, 1200);
+				});
+				//******************************\\
+
+				//Programing Option in secondary side menu\\
+				$('.navBarItem#programing').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Programing</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/programing.html');
+				});
+				//******************************\\
+				
+				
+				//Animation Option in secondary side menu\\
+				$('.navBarItem#animation').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/animation.html');
+				});
+				//******************************\\
+				
+				
+				//Robotics Option in secondary side menu\\
+				$('.navBarItem#robotics').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/robotics.html');
+				});
+				//******************************\\
+				
+				
+				//Other Option in secondary side menu\\
+				$('.navBarItem#other').click(function() {
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/other.html');
+				});
+				//******************************\\
+
 
 				//Side Menu\\
 				$('.sideMenu').css({
@@ -204,8 +378,21 @@
 				});
 
 				$('.sideMenuOption#programing').click(function() {
-					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Programing</div><div class="projectListingBox"></div></div>');
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory"s>Programing</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/programing.html');
+					$(".navBar").animate({
+						opacity : 1,
+					}, 1200);
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+					$('.contentArea').css({
+						'margin-left' : '10%'
+					});
+					//$('.navBar').css({
+					//	'opacity' : '1'
+					//});
 				});
 				//******************************\\
 
@@ -221,7 +408,16 @@
 				$('.sideMenuOption#animation').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/animation.html');
-
+					$(".navBar").animate({
+						opacity : 1,
+					}, 1200);
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+					$('.contentArea').css({
+						'margin-left' : '10%'
+					});
 				});
 				//******************************\\
 
@@ -237,6 +433,16 @@
 				$('.sideMenuOption#robotics').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/robotics.html');
+					$(".navBar").animate({
+						opacity : 1,
+					}, 1200);
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+					$('.contentArea').css({
+						'margin-left' : '10%'
+					});
 				});
 				//******************************\\
 
@@ -252,6 +458,16 @@
 				$('.sideMenuOption#other').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/other.html');
+					$(".navBar").animate({
+						opacity : 1,
+					}, 1200);
+					$(".sideMenu").animate({
+						width : 0,
+						opacity : 0
+					}, 1200);
+					$('.contentArea').css({
+						'margin-left' : '10%'
+					});
 				});
 				//******************************\\
 			});
