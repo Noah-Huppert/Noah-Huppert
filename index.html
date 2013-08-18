@@ -6,6 +6,10 @@
 			body {
 				margin: 0;
 			}
+			a {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
 			.sideMenu {
 				background: #212121;
 				float: left;
@@ -117,10 +121,6 @@
 				margin-left: 1px;
 				margin-top: 1px;
 			}
-			a {
-				color: #FFFFFF;
-				text-decoration: none;
-			}
 		</style>
 	</head>
 	<body>
@@ -154,18 +154,26 @@
 			</div>
 		</div>
 		<div class="contentArea">
-			<div class="projectsListing">
-				<div class="catagory">
-					Programing
+			<div class="post">
+				<div class="postTitle">
+					Pig Latin Translator
 				</div>
-				<div class="projectListingBox">
+				<div class="postContent">
 
 				</div>
 			</div>
+			<!--<div class="projectsListing">
+			<div class="catagory">
+			Programing
+			</div>
+			<div class="projectListingBox">
+
+			</div>
+			</div>-->
 		</div>
 		<script>
 			$(document).ready(function() {
-				
+
 				//Initail Hiding and other functions\\
 				$(".sideMenuSelector#programing").hide();
 				$(".sideMenuSelector#animation").hide();
@@ -195,7 +203,7 @@
 				});
 
 				$('.sideMenuOption#programing').click(function() {
-					$('.catagory').html('Programing');
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Programing</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/programing.html');
 				});
 				//******************************\\
@@ -210,8 +218,9 @@
 				});
 
 				$('.sideMenuOption#animation').click(function() {
-					$('.catagory').html('Animation');
-					
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/animation.html');
+
 				});
 				//******************************\\
 
@@ -225,7 +234,8 @@
 				});
 
 				$('.sideMenuOption#robotics').click(function() {
-					$('.catagory').html('Robotics');
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/robotics.html');
 				});
 				//******************************\\
 
@@ -239,7 +249,8 @@
 				});
 
 				$('.sideMenuOption#other').click(function() {
-					$('.catagory').html('Other');
+					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
+					$('.projectListingBox').load('posts/other.html');
 				});
 				//******************************\\
 			});
