@@ -91,7 +91,8 @@
 				border-radius: 15px;
 				background: #333333;
 				margin-top: 20px;
-				margin-left: 20px;
+				margin-left: 32px;
+				float: left;
 			}
 			.listingTitle {
 				margin-left: auto;
@@ -113,11 +114,10 @@
 				border-style: solid;
 				border-width: 1px;
 				border-color: #242424;
+				margin-left: 1px;
+				margin-top: 1px;
 			}
-			.listingThumbnail#piglatinTranslator {
-				background: url(images/projectThumbnails/piglatinTranslator.png);
-			}
-			a{
+			a {
 				color: #FFFFFF;
 				text-decoration: none;
 			}
@@ -159,75 +159,90 @@
 					Programing
 				</div>
 				<div class="projectListingBox">
-					<div class="listing">
-						<a href="www.google.com"> <div class="listingThumbnail" id="piglatinTranslator"></div>
-						<div class="listingTitle">
-							Piglatin Translator
-						</div>
-						</a>
-					</div>		
+
 				</div>
 			</div>
 		</div>
 		<script>
-			//Initail Hiding and other functions\\
-			$(".sideMenuSelector#programing").hide();
-			$(".sideMenuSelector#animation").hide();
-			$(".sideMenuSelector#robotics").hide();
-			$(".sideMenuSelector#other").hide();
-			//******************************\\
-
-			//Side Menu\\
-			$('.sideMenu').css({
-				'height' : $(window).height()
-			});
-			//******************************\\
-
-			//Content Area\\
-			$('.contentArea').css({
-				'height' : $(window).height()
-			});
-			//******************************\\
-
-			//Programing Option in side menu\\
-			$('.sideMenuOption#programing').mouseenter(function() {
-				$(".sideMenuSelector#programing").show();
-			});
-
-			$('.sideMenuOption#programing').mouseleave(function() {
+			$(document).ready(function() {
+				
+				//Initail Hiding and other functions\\
 				$(".sideMenuSelector#programing").hide();
-			});
-			//******************************\\
-
-			//Programing Option in side menu\\
-			$('.sideMenuOption#animation').mouseenter(function() {
-				$(".sideMenuSelector#animation").show();
-			});
-
-			$('.sideMenuOption#animation').mouseleave(function() {
 				$(".sideMenuSelector#animation").hide();
-			});
-			//******************************\\
-
-			//Robotics Option in side menu\\
-			$('.sideMenuOption#robotics').mouseenter(function() {
-				$(".sideMenuSelector#robotics").show();
-			});
-
-			$('.sideMenuOption#robotics').mouseleave(function() {
 				$(".sideMenuSelector#robotics").hide();
-			});
-			//******************************\\
-
-			//Other Option in side menu\\
-			$('.sideMenuOption#other').mouseenter(function() {
-				$(".sideMenuSelector#other").show();
-			});
-
-			$('.sideMenuOption#other').mouseleave(function() {
 				$(".sideMenuSelector#other").hide();
+				//******************************\\
+
+				//Side Menu\\
+				$('.sideMenu').css({
+					'height' : $(window).height()
+				});
+				//******************************\\
+
+				//Content Area\\
+				$('.contentArea').css({
+					'height' : $(window).height()
+				});
+				//******************************\\
+
+				//Programing Option in side menu\\
+				$('.sideMenuOption#programing').mouseenter(function() {
+					$(".sideMenuSelector#programing").show();
+				});
+
+				$('.sideMenuOption#programing').mouseleave(function() {
+					$(".sideMenuSelector#programing").hide();
+				});
+
+				$('.sideMenuOption#programing').click(function() {
+					$('.catagory').html('Programing');
+					$('.projectListingBox').load('posts/programing.html');
+				});
+				//******************************\\
+
+				//Animation Option in side menu\\
+				$('.sideMenuOption#animation').mouseenter(function() {
+					$(".sideMenuSelector#animation").show();
+				});
+
+				$('.sideMenuOption#animation').mouseleave(function() {
+					$(".sideMenuSelector#animation").hide();
+				});
+
+				$('.sideMenuOption#animation').click(function() {
+					$('.catagory').html('Animation');
+					
+				});
+				//******************************\\
+
+				//Robotics Option in side menu\\
+				$('.sideMenuOption#robotics').mouseenter(function() {
+					$(".sideMenuSelector#robotics").show();
+				});
+
+				$('.sideMenuOption#robotics').mouseleave(function() {
+					$(".sideMenuSelector#robotics").hide();
+				});
+
+				$('.sideMenuOption#robotics').click(function() {
+					$('.catagory').html('Robotics');
+				});
+				//******************************\\
+
+				//Other Option in side menu\\
+				$('.sideMenuOption#other').mouseenter(function() {
+					$(".sideMenuSelector#other").show();
+				});
+
+				$('.sideMenuOption#other').mouseleave(function() {
+					$(".sideMenuSelector#other").hide();
+				});
+
+				$('.sideMenuOption#other').click(function() {
+					$('.catagory').html('Other');
+				});
+				//******************************\\
 			});
-			//******************************\\
 		</script>
 	</body>
 </html>
