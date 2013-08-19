@@ -392,6 +392,12 @@
 				//Secondary Menu\\
 				
 				var secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width());
+				if(Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70){
+					secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width()) - 10;
+				}
+				if(Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70){
+					secondaryMenuMarginLeft = Math.abs($('navBar').width() - $('.navBarItem').width());
+				}
 				$('.navBar').css({
 					'margin-left' : secondaryMenuMarginLeft
 				});
