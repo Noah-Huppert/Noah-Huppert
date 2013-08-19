@@ -305,7 +305,6 @@
 
 				//******************************\\
 
-
 				//Home Option in secondary side menu\\
 				$('.navBarHeader#home').click(function() {
 					$('.contentArea').html('<div class="imageCarosel"><img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/><img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/></div>');
@@ -327,24 +326,21 @@
 					$('.projectListingBox').load('posts/programing.html');
 				});
 				//******************************\\
-				
-				
+
 				//Animation Option in secondary side menu\\
 				$('.navBarItem#animation').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/animation.html');
 				});
 				//******************************\\
-				
-				
+
 				//Robotics Option in secondary side menu\\
 				$('.navBarItem#robotics').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/robotics.html');
 				});
 				//******************************\\
-				
-				
+
 				//Other Option in secondary side menu\\
 				$('.navBarItem#other').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
@@ -352,24 +348,22 @@
 				});
 				//******************************\\
 
-
 				//Side Menu\\
 				var sideMenuWidth = $(window).width() * 0.2;
-				if(sideMenuWidth < 300){
+				if (sideMenuWidth < 300) {
 					sideMenuWidth = 300;
 				}
-				
+
 				$('.sideMenu').css({
 					'height' : $(window).height(),
 					'width' : sideMenuWidth
 				});
 				//******************************\\
 
-
 				//Image Carosel\\
 				var imageCaroselWidth = $(window).width() - sideMenuWidth;
 				var imageCaroselMarginTop = ($(window).height() - 540) / 2;
-				if(imageCaroselWidth < 1000){
+				if (imageCaroselWidth < 1000) {
 					imageCaroselWidth = 1000;
 				}
 				$('.imageCarosel').css({
@@ -380,29 +374,26 @@
 					'margin-top' : imageCaroselMarginTop
 				});
 				//******************************\\
-				
-				
+
 				//Content Area\\
 				$('.contentArea').css({
 					'height' : $(window).height()
 				});
 				//******************************\\
 
-
 				//Secondary Menu\\
-				
+
 				var secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width());
-				if(Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70){
+				if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70) {
 					secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width()) - 10;
 				}
-				if(Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70){
+				if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70) {
 					secondaryMenuMarginLeft = Math.abs($('navBar').width() - $('.navBarItem').width());
 				}
 				$('.navBar').css({
 					'margin-left' : secondaryMenuMarginLeft
 				});
 				//******************************\\
-				
 
 				//Programing Option in side menu\\
 				$('.sideMenuOption#programing').mouseenter(function() {
@@ -498,6 +489,58 @@
 					});
 				});
 				//******************************\\
+
+				$(window).resize(function() {
+
+					//Side Menu\\
+					var sideMenuWidth = $(window).width() * 0.2;
+					if (sideMenuWidth < 300) {
+						sideMenuWidth = 300;
+					}
+
+					$('.sideMenu').css({
+						'height' : $(window).height(),
+						'width' : sideMenuWidth
+					});
+					//******************************\\
+
+
+					//Image Carosel\\
+					var imageCaroselWidth = $(window).width() - sideMenuWidth;
+					var imageCaroselMarginTop = ($(window).height() - 540) / 2;
+					if (imageCaroselWidth < 1000) {
+						imageCaroselWidth = 1000;
+					}
+					$('.imageCarosel').css({
+						'width' : imageCaroselWidth,
+						'height' : $(window).height()
+					});
+					$('.homeImage').css({
+						'margin-top' : imageCaroselMarginTop
+					});
+					//******************************\\
+
+
+					//Content Area\\
+					$('.contentArea').css({
+						'height' : $(window).height()
+					});
+					//******************************\\
+
+
+					//Secondary Menu\\
+					var secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width());
+					if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70) {
+						secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width()) - 10;
+					}
+					if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70) {
+						secondaryMenuMarginLeft = Math.abs($('navBar').width() - $('.navBarItem').width());
+					}
+					$('.navBar').css({
+						'margin-left' : secondaryMenuMarginLeft
+					});
+					//******************************\\
+				});
 			});
 		</script>
 	</body>
