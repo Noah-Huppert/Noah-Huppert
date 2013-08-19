@@ -63,8 +63,7 @@
 				margin-left: 20px;
 			}
 			.contentArea {
-				margin-left: 20%;
-				width: 80%;
+				width: 100%;
 				background: url();
 				color: #363636;
 				text-align: center;
@@ -79,11 +78,12 @@
 				font-size: 40px;
 				font-style: italic;
 				padding-bottom: 40px;
+				width: 220px;
 			}
 			.projectListingBox {
-				width: 77%;
-				height: 80%;
-				margin: auto;
+				width: 986px;
+				height: 620px;
+				margin-left: 150px;
 				background: #FAFAFA;
 				border-style: solid;
 				border-width: 2px;
@@ -154,14 +154,14 @@
 			.navBar {
 				z-index: 2;
 				position: absolute;
-				text-align: center;
+				text-align: center;padding-left; 500px;
 				width: 100px;
 				height: 70%;
 				border-right-style: solid;
 				border-right-width: 2px;
 				border-right-color: #D1D1D1;
 				margin-top: 120px;
-				margin-left: 190px;
+				margin-left: 45px;
 			}
 			.navBarItem {
 				height: 40px;
@@ -195,6 +195,7 @@
 				border-radius: 10px;
 			}
 			.imageCarosel {
+				padding-left: 20%;
 				background: #1C1C1C;
 				width: 100%;
 				height: 100%;
@@ -296,6 +297,9 @@
 				$(".sideMenuSelector#animation").hide();
 				$(".sideMenuSelector#robotics").hide();
 				$(".sideMenuSelector#other").hide();
+				$('.navBar').css({
+					'margin-left' : '190px'
+				});
 				$('.navBar').toggle();
 				$('.homeImage#homeImage2').hide();
 				window.setInterval(function() {
@@ -310,9 +314,7 @@
 					$('.contentArea').html('<div class="imageCarosel"><img id="homeImage1" class="homeImage" src="images/homeImage1.jpg"/><img id="homeImage2" class="homeImage" src="images/homeImage2.jpg"/></div>');
 					$(".navBar").hide('slow');
 					$('.homeImage#homeImage2').hide();
-					$('.contentArea').css({
-						'margin-left' : '20%'
-					});
+					
 					$(".sideMenu").animate({
 						width : $(window).width() - $('.contentArea').width(),
 						opacity : 1
@@ -353,7 +355,6 @@
 				if (sideMenuWidth < 300) {
 					sideMenuWidth = 300;
 				}
-
 				$('.sideMenu').css({
 					'height' : $(window).height(),
 					'width' : sideMenuWidth
@@ -377,22 +378,43 @@
 
 				//Content Area\\
 				$('.contentArea').css({
-					'height' : $(window).height()
+					'height' : $(window).height(),
+					'width' : $(window).width()
+				});
+				$('body').css({
+					'height' : $(window).height(),
+					'width' : $(window).width()
 				});
 				//******************************\\
 
-				//Secondary Menu\\
+				//Project Listing Box\\
+				function positionProjectListingBox() {
+					var projectListingBoxMarginLeft = ($('.contentArea').width() - 986) / 2;
+					if (projectListingBoxMarginLeft < 100) {
+						projectListingBoxMarginLeft = projectListingBoxMarginLeft + Math.abs(projectListingBoxMarginLeft - 120);
+					}
+					$('.catagory').css({
+						'margin-left' : ($('.contentArea').width() - 220) / 2
+					});
+					$('.projectListingBox').css({
+						'margin-left' : projectListingBoxMarginLeft
+					});
+				}
 
-				var secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width());
-				if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70) {
-					secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width()) - 10;
+				//******************************\\
+
+				//Secondary Menu\\
+				function positionSecondMenu() {
+					var projectListingBoxMarginLeft = ($('body').width() - 986) / 2;
+					if (projectListingBoxMarginLeft < 100) {
+						projectListingBoxMarginLeft = projectListingBoxMarginLeft + Math.abs(projectListingBoxMarginLeft - 120);
+					}
+					var secondMenuMarginLeft = (projectListingBoxMarginLeft - 110);
+					$('.navBar').css({
+						'margin-left' : secondMenuMarginLeft
+					});
 				}
-				if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70) {
-					secondaryMenuMarginLeft = Math.abs($('navBar').width() - $('.navBarItem').width());
-				}
-				$('.navBar').css({
-					'margin-left' : secondaryMenuMarginLeft
-				});
+
 				//******************************\\
 
 				//Programing Option in side menu\\
@@ -407,17 +429,15 @@
 				$('.sideMenuOption#programing').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory"s>Programing</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/programing.html');
+
+					positionProjectListingBox();
+					positionSecondMenu();
+
 					$(".navBar").show('slow');
 					$(".sideMenu").animate({
 						width : 0,
 						opacity : 0
 					}, 1200);
-					$('.contentArea').css({
-						'margin-left' : '10%'
-					});
-					//$('.navBar').css({
-					//	'opacity' : '1'
-					//});
 				});
 				//******************************\\
 
@@ -438,9 +458,6 @@
 						width : 0,
 						opacity : 0
 					}, 1200);
-					$('.contentArea').css({
-						'margin-left' : '10%'
-					});
 				});
 				//******************************\\
 
@@ -461,9 +478,6 @@
 						width : 0,
 						opacity : 0
 					}, 1200);
-					$('.contentArea').css({
-						'margin-left' : '10%'
-					});
 				});
 				//******************************\\
 
@@ -484,63 +498,8 @@
 						width : 0,
 						opacity : 0
 					}, 1200);
-					$('.contentArea').css({
-						'margin-left' : '10%'
-					});
 				});
 				//******************************\\
-
-				$(window).resize(function() {
-
-					//Side Menu\\
-					var sideMenuWidth = $(window).width() * 0.2;
-					if (sideMenuWidth < 300) {
-						sideMenuWidth = 300;
-					}
-
-					$('.sideMenu').css({
-						'height' : $(window).height(),
-						'width' : sideMenuWidth
-					});
-					//******************************\\
-
-
-					//Image Carosel\\
-					var imageCaroselWidth = $(window).width() - sideMenuWidth;
-					var imageCaroselMarginTop = ($(window).height() - 540) / 2;
-					if (imageCaroselWidth < 1000) {
-						imageCaroselWidth = 1000;
-					}
-					$('.imageCarosel').css({
-						'width' : imageCaroselWidth,
-						'height' : $(window).height()
-					});
-					$('.homeImage').css({
-						'margin-top' : imageCaroselMarginTop
-					});
-					//******************************\\
-
-
-					//Content Area\\
-					$('.contentArea').css({
-						'height' : $(window).height()
-					});
-					//******************************\\
-
-
-					//Secondary Menu\\
-					var secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width());
-					if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) < 70) {
-						secondaryMenuMarginLeft = (($('body').width() - $('.contentArea').width()) - $('.navBarItem').width()) - 10;
-					}
-					if (Math.abs(secondaryMenuMarginLeft - $('.navBar').width()) > 70) {
-						secondaryMenuMarginLeft = Math.abs($('navBar').width() - $('.navBarItem').width());
-					}
-					$('.navBar').css({
-						'margin-left' : secondaryMenuMarginLeft
-					});
-					//******************************\\
-				});
 			});
 		</script>
 	</body>
