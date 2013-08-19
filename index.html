@@ -453,6 +453,10 @@
 				$('.sideMenuOption#animation').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Animation</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/animation.html');
+					
+					positionProjectListingBox();
+					positionSecondMenu();
+					
 					$(".navBar").show('slow');
 					$(".sideMenu").animate({
 						width : 0,
@@ -473,6 +477,10 @@
 				$('.sideMenuOption#robotics').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Robotics</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/robotics.html');
+					
+					positionProjectListingBox();
+					positionSecondMenu();
+					
 					$(".navBar").show('slow');
 					$(".sideMenu").animate({
 						width : 0,
@@ -493,6 +501,10 @@
 				$('.sideMenuOption#other').click(function() {
 					$('.contentArea').html('<div class="projectsListing"><div class="catagory">Other</div><div class="projectListingBox"></div></div>');
 					$('.projectListingBox').load('posts/other.html');
+					
+					positionProjectListingBox();
+					positionSecondMenu();
+					
 					$(".navBar").show('slow');
 					$(".sideMenu").animate({
 						width : 0,
