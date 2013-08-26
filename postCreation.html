@@ -366,7 +366,7 @@
 				postCatagory = $('#catagory').val();
 				completetionDate = $('#completetionDate').val();
 				developers = $('#developersInput').val();
-				post = '<!DOCTYPE HTML><html><body><div class="post"><div class="postTitle"><strong>' + postName + '</strong></div><div class="postContent"><div class="postMetaData"><br>Catagory: ' + postCatagory + '<br>Date Completed: ' + completetionDate + '<br>Developers: ' + developers + '<br>Download</div>' + postContent + '</div></div>';
+				post = '<!DOCTYPE HTML><html><body><div class="post"><div class="postTitle"><strong>' + postTitle + '</strong></div><div class="postContent"><div class="postMetaData"><br>Catagory: ' + postCatagory + '<br>Date Completed: ' + completetionDate + '<br>Developers: ' + developers + '<br>Download</div>' + postContent + '</div></div>';
 				//postHeader = '<div class="listing"><a onclick="$(' + "'.contentArea').load('posts/" + postCatagory + '/' + postName + ".html'" + ')"> <div class="listingThumbnail"id="' + postName + '"></div><div class="listingTitle">' + postTitle + '</div> </a></div>';
 				postHeader = "<div onclick=" + '"' + "$('.contentArea').load('posts/" + postCatagory + '/' + postName + "')" + '"' + 'class="listing"><div class="listingTitle">' + postTitle + '</div></div>';
 				$('#headerCode').val(postHeader);
